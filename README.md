@@ -27,20 +27,20 @@ Bu rehber, sistem gereksinimi düşük olan @DroseraNetwork node'unu kolayca kur
 
 Faucet bağlantısı: https://www.alchemy.com/faucets
 
-## Sunucuya Bağlanma
+## 1- Sunucuya Bağlanma
 
 ```bash
 ssh root@[Sunucu_IP]
 ```
 
-## Gerekli Güncellemeleri ve Araçları Yükleyin
+## 2- Gerekli Güncellemeleri ve Araçları Yükleyin
 
 ```bash
 sudo apt-get update && sudo apt-get upgrade -y && \
 sudo apt install curl ufw iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli libgbm1 pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 ```
 
-## CLI Kurulumları
+## 3- CLI Kurulumları
 
 ```bash
 curl -L https://app.drosera.io/install | bash
@@ -55,7 +55,7 @@ curl -fsSL https://bun.sh/install | bash
 source /root/.bashrc
 ```
 
-## Trap (Tuzak) Oluşturma
+## 4- Trap (Tuzak) Oluşturma
 
 ```bash
 mkdir my-drosera-trap && cd my-drosera-trap
@@ -63,7 +63,7 @@ git config --global user.email "mail-adresini-gir"
 git config --global user.name "github-kullanici-adi"
 ```
 
-## Template'i Çekip Derleme
+## 5- Template'i Çekip Derleme
 
 ```bash
 forge init -t drosera-network/trap-foundry-template
@@ -71,21 +71,23 @@ bun install
 forge build
 ```
 
-## Deploy Etme
+## 6- Deploy Etme
 
 ```bash
 DROSERA_PRIVATE_KEY="kendi-privatekey"
 drosera apply
 ```
+- Yukarıdaki "kendi-privatekey" kısmına Holesky ETH bulunan MetaMask cüzdanınızın private key’ini girin.
+- Deploy sırasında sizden onay istenirse ofc yazıp Enter'a basın.
 
-## Kontrol Et ve Bloom Boost İşlemi
+## 7- Kontrol Et ve Bloom Boost İşlemi
 
-1. https://app.drosera.io adresine girin
-2. Cüzdanınızı bağlayın
-3. "Traps Owned" sekmesinden trap'e tıklayın
-4. "Send Bloom Boost" butonuna basın ve bir miktar Holesky ETH yatırın
+- https://app.drosera.io adresine girin
+- Cüzdanınızı bağlayın
+- "Traps Owned" sekmesinden trap'e tıklayın
+- "Send Bloom Boost" butonuna basın ve bir miktar Holesky ETH yatırın
 
-## Whitelist Ayarı
+## 8- Whitelist Ayarı
 
 ```bash
 cd ~/my-drosera-trap
@@ -100,8 +102,9 @@ whitelist = ["0xSeninPublicCuzdanAdresin"]
 ```bash
 DROSERA_PRIVATE_KEY=senin_privatekeyin drosera apply
 ```
+- Yukarıdaki "kendi-privatekey" kısmına Holesky ETH bulunan MetaMask cüzdanınızın private key’ini girin.
 
-## Operatör CLI Kurulumu
+## 9- Operatör CLI Kurulumu
 
 ```bash
 cd ~
@@ -111,13 +114,13 @@ sudo cp drosera-operator /usr/bin
 drosera-operator --version
 ```
 
-## Alchemy RPC Alma
+## 10- Alchemy RPC Alma
 
 1. https://dashboard.alchemy.com adresine git
 2. Ethereum → Holesky ağı için bir uygulama oluştur
 3. Uygulama sayfasından özel RPC linkini kopyala
 
-## SystemD Servisi Oluşturma
+## 11- SystemD Servisi Oluşturma
 
 ```bash
 sudo tee /etc/systemd/system/drosera.service > /dev/null <<EOF
@@ -146,8 +149,11 @@ ExecStart=$(which drosera-operator) node \
 WantedBy=multi-user.target
 EOF
 ```
+- "Private_Keyin" kısmına Deploy ettiğiniz cüzdanın private key’i girin.
+- "VPS_IP_Adresin" kısmına VPS sunucunuzun IP adresini girin.
+- "Oluşturduğun_RPC" kısmına Alchemy'den aldığınız özel Holesky RPC adresini girin.
 
-## Node'u Başlatma ve Kontrol Etme
+## 12- Node'u Başlatma ve Kontrol Etme
 
 ```bash
 sudo systemctl daemon-reload
@@ -157,12 +163,11 @@ sudo systemctl status drosera
 journalctl -u drosera.service -f
 ```
 
-## Opt-in ve Çalışırlığı Doğrulama
+## Çalışırlığı Doğrulama
 
 1. Trap sayfasından "Opt-in" butonuna tıklayın
 2. Operator Status yeşil olmalı
-3. Rewards kısmı işlemeye başlamalı
 
 ---
 
-Herhangi bir sorunuz olursa: https://t.me/ViriyaChat
+Herhangi bir sorunuz olursa: https://t.me/ViriyaChat  https://x.com/UfukDegen adreslerinden bana ulaşabilirsiniz.
