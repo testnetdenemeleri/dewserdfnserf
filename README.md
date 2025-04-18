@@ -79,6 +79,8 @@ forge build
 
 ```bash
 DROSERA_PRIVATE_KEY="kendi-privatekey"
+```
+```bash
 drosera apply
 ```
 - Yukarıdaki "kendi-privatekey" kısmına Holesky ETH bulunan MetaMask cüzdanınızın private key’ini girin.
