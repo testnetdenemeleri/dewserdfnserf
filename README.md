@@ -46,11 +46,13 @@ sudo apt install curl ufw iptables build-essential git wget lz4 jq make gcc nano
 curl -L https://app.drosera.io/install | bash
 source /root/.bashrc
 droseraup
-
+```
+```bash
 curl -L https://foundry.paradigm.xyz | bash
 source /root/.bashrc
 foundryup
-
+```
+```bash
 curl -fsSL https://bun.sh/install | bash
 source /root/.bashrc
 ```
