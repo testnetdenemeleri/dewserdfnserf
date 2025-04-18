@@ -64,6 +64,8 @@ mkdir my-drosera-trap && cd my-drosera-trap
 git config --global user.email "mail-adresini-gir"
 git config --global user.name "github-kullanici-adi"
 ```
+- "mail-adresini-gir" kısmına githup mail adresinizi girin.
+- "github-kullanici-adi" kısmına githup kullanıcı adınızı girin.
 
 ## 5- Template'i Çekip Derleme
 
