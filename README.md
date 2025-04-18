@@ -152,6 +152,7 @@ WantedBy=multi-user.target
 EOF
 ```
 - "Private_Keyin" kısmına Deploy ettiğiniz cüzdanın private key’i girin.
+
 - "VPS_IP_Adresin" kısmına VPS sunucunuzun IP adresini girin.
 - "Oluşturduğun_RPC" kısmına Alchemy'den aldığınız özel Holesky RPC adresini girin.
 
@@ -164,7 +165,9 @@ sudo systemctl start drosera
 sudo systemctl status drosera
 journalctl -u drosera.service -f
 ```
+
 ## ✅ Aşağıdaki gibi loglar almaya başladıysanız, kurulumunuzu başarılı bir şekilde tamamladınız demektir,
+![Ekran görüntüsü 2025-04-18 201619](https://github.com/user-attachments/assets/5d9b6c89-a2ca-49c8-bdf4-f91e77368dfa)
 
 ## Çalışırlığı Doğrulama
 
