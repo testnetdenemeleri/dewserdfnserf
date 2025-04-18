@@ -164,6 +164,7 @@ sudo systemctl start drosera
 sudo systemctl status drosera
 journalctl -u drosera.service -f
 ```
+## ✅ Aşağıdaki gibi loglar almaya başladıysanız, kurulumunuzu başarılı bir şekilde tamamladınız demektir,
 
 ## Çalışırlığı Doğrulama
 
@@ -172,4 +173,4 @@ journalctl -u drosera.service -f
 
 ---
 
-Herhangi bir sorunuz olursa: https://t.me/ViriyaChat  https://x.com/UfukDegen adreslerinden bana ulaşabilirsiniz.
+Sosyal Medya Hesabım: https://x.com/UfukDegen
